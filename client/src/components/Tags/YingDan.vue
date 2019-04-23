@@ -1,0 +1,135 @@
+<template>
+<div class="yingdan">
+	<div v-for="list in yingdan">
+	<div class="yingtou" :style="{backgroundImage:`url(${list.yinTou})`}">
+		<span class="yingtoutit">{{list.yinHeader.title}}</span>
+		<span class="yingtousubtit">{{list.yinHeader.subtit}}</span>
+		<span class="yingtoucount">共{{list.yinHeader.count}}部影片</span>
+		<span class="yingtoudate">{{list.yinHeader.date}}更新</span>
+	</div>
+	<div class="content">
+		<ul>
+			<li v-for="itme in list.yincontent" :style="{backgroundImage:`url(${itme.pic})`}" @click="Toshow(itme)">
+				<span>{{itme.name}}</span>
+			</li>
+		</ul>
+	</div>
+	</div>
+</div>
+</template>
+<script>
+export default{
+	name:'tvbox',
+	props:["yingdan"],
+	methods:{
+		Toshow:function(list){
+			console.log(list)
+			this.$router.push({name:'show',params: {toppic:list.pic,name:list.name,num:list.num}});
+		}
+	}
+}
+</script>
+<style lang="scss" scoped>
+.yingdan{
+	width: 100%;
+	height: 18rem;
+	/*background: black;*/
+}
+.yingtou{
+	width: 100%;
+	height: 9rem;
+	background: black;
+	position: relative;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAgY0lzyLZ8zTwnjPDk8037d0_IjH9Nq8n4FGvJ2cGxpv4Gwmh);
+}
+.yingtou::before{
+	content: '';
+	width: 0px;
+	height: 0;
+	position: absolute;
+	left: 0;
+	bottom: -0.1rem;
+	left: 50%;
+	transform: translate(-50%);
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid white;
+}
+.yingtoutit{
+	display: block;
+	color: white;
+	width: 100%;
+	font-weight: 500;
+	font-size: 1rem;
+	position: absolute;
+	top: 20%;
+	text-align: center;
+	/*background: white*/
+}
+.yingtousubtit{
+	display: block;
+	color: white;
+	width: 100%;
+	font-weight: 500;
+	font-size: 0.6rem;
+	position: absolute;
+	top: 40%;
+	text-align: center;
+	/*background: white*/
+}
+.yingtoucount{
+	display: block;
+	color: white;
+	width: 100%;
+	font-weight: 500;
+	font-size: 0.7rem;
+	position: absolute;
+	top: 60%;
+	text-align: center;
+	/*background: white*/
+}
+.yingtoudate{
+	display: block;
+	color: white;
+	width: 98%;
+	font-weight: 500;
+	font-size: 0.7rem;
+	position: absolute;
+	top: 80%;
+	text-align: right;
+	/*background: white*/
+}
+.content{
+	width: 100%;
+	height: 10rem;
+	/*background: green;*/
+	position: relative;
+	padding-top:0.2rem;
+	overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.content ul{
+	width: 160%;
+	height: 8rem;
+	/*background: red;*/
+}
+.content ul li{ 
+	height: 7rem;
+	width: 5.5rem;
+	margin-top: 0.5rem;
+	margin-left: 0.5rem;
+	float: left;
+	background: white;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.content ul li span{
+	font-size: 0.5rem;
+	position: relative;
+	top:7.2rem;
+}
+</style>

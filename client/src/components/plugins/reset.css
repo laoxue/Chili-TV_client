@@ -1,0 +1,13 @@
+div,h1,header,footer,body,ul,li,section{
+	margin:0px;
+	padding:0px;
+}
+li{
+	list-style: none;
+}
+a{
+	background: black;
+	text-decoration: none;
+	font-size: 0.96rem;
+	color: black
+}
