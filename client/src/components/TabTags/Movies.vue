@@ -12,14 +12,16 @@ import SlideShow from './../Tags/SlideShow.vue'
 import MovieBox from '../Tags/MovieBox.vue'
 import Activity from '../Tags/Activity.vue'
 import YingDan from '../Tags/YingDan.vue'
+import * as ArticeService from './../../services/article/article.service'
+import * as FilmService from './../../services/films/film.service'
 export default{
 	computed:{
-		slideshowImage(){
-			return this.$store.state.mv.swiperImg
-		},
-		news(){
-			return this.$store.state.mv.news
-		},
+		// slideshowImage(){
+		// 	return this.$store.state.mv.swiperImg
+		// },
+		// news(){
+		// 	return this.$store.state.mv.news
+		// },
 		act(){
 			return this.$store.state.mv.act
 		},
@@ -32,7 +34,31 @@ export default{
 		MovieBox,
 		Activity,
 		YingDan
-	}
+	},
+	mounted() {
+		this.getbanner()
+		this.getnewfilm()
+	},
+	data() {
+		return {
+			slideshowImage:[],
+			news:[]
+		}
+	},
+	methods: {
+		getbanner(){
+			ArticeService.getBanner().then((res) => {
+				console.log(res)
+				this.slideshowImage = res.data.data
+			})
+		},
+		getnewfilm(){
+			FilmService.getFilmnews().then((res) => {
+				console.log(res)
+				this.news = res.data.data
+			})
+		}
+	},
 }
 </script>
 <style>

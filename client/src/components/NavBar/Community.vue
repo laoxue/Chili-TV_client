@@ -45,7 +45,8 @@ export default {
   margin-bottom:2rem;
 }
 .community{
-  margin:0px;
+  margin-top:60px;
   padding:0px;
+  margin-bottom:5rem;
 }
 </style>

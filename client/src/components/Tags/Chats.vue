@@ -18,29 +18,28 @@ export default{
 			msgbox:['欢迎你来到本聊天室！']
 		}
 	},
+	mounted() {
+		this.$socket.emit('login',{
+				username: 'username',
+				password: 'password'
+			});
+
+			//接收服务端的信息
+			this.sockets.subscribe('relogin', (data) => {
+			console.log(data)
+			})
+	},
 	methods:{
 		goback:function(){
 			this.$router.push({name:'community'})
 		},
 		chats:function(){
-			var that = this;
-			var ws = new WebSocket("ws://localhost:2333/ws");
-			ws.onopen = function(ev){
-				console.log(that.val)
-				// alert("连接成功")
-				ws.send(that.val);
-				that.val=''
-				
-			}
-			ws.onmessage = function(e){
-				that.val=''
-				for(var i =0;i<that.msgbox.length;i++){
-					if(that.msgbox.indexOf(e.data)==-1){
-						that.msgbox.push(e.data)
-					}
-				}
-	
-			}
+			//发送信息给服务端
+			// this.sockets.on('news', (data) => {
+			// 	console.log(data)
+			// 	this.sockets.emit('something', {my:'data'})
+			// })
+			
 		}
 	}
 }

@@ -1,7 +1,7 @@
 <template>
   <Swiper class="swiper" v-if="swiperImage.length > 0" :autoPlay='true' :showIndicator='true' interval="2500" duration="500">
         <Slide @click="lunbo" v-for="(item,index) in swiperImage" :key="index">
-          <img :src="item">
+          <img :src="item.bannerUrl" @click="viewArticle(item._id)">
         </Slide>
    </Swiper>
 </template>
@@ -17,6 +17,11 @@ export default {
   methods:{
     lunbo:function(){
       console.log(111)
+    },
+    viewArticle(ar_id){
+      this.$router.push({
+        path:`/article/${ar_id}`
+      })
     }
   }
 } 

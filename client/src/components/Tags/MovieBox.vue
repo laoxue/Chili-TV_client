@@ -5,9 +5,9 @@
 	</div>
 	<v-touch class="content">
 		<ul class="items">
-			<li v-for="list in news" @click="Toshow(list)">
-				<div :style="{backgroundImage:`url(${list.pic})`}"><img src="../../assets/icon/label.png"/><span>{{list.num}}</span></div>
-				<span>{{list.name}}</span>
+			<li v-for="(list, index) in news" @click="Toshow(list)" :key="index">
+				<div :style="{backgroundImage:`url(${list.coverurl})`}"><img src="../../assets/icon/label.png"/><span>{{list.dbscore}}</span></div>
+				<span>{{list.fulname}}</span>
 			</li>
 		</ul>
 	</v-touch>
@@ -25,8 +25,7 @@ export default{
 	methods:{
 		Toshow:function(list){
 			console.log(list)
-			this.$router.push({name:'show',params: {toppic:list.pic,name:list.name,num:list.num}});
-			console.log(111111)
+			this.$router.push({path:`/show/${list._id}`});
 		}
 	}
 }

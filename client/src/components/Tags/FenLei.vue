@@ -1,5 +1,5 @@
 <template>
-	<div class="fenlei">
+	<div class="fenlei" style="margin-top:60px">
 		<div class="search">
 			<span @click="close">关闭</span>
 			<input type="text" name="search" placeholder="请输入您要搜索的影片">

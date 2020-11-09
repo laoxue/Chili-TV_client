@@ -37,9 +37,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .library{
-  margin:0px;
+  margin-top:60px;
   padding:0px;
   margin-bottom:5rem;
 }

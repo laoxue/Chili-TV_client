@@ -2,7 +2,7 @@
 <div class="header">
 	<header>
 		<div class="logo_box">
-			<img src="../../assets/dali_saymore.png" class="logo"/>
+			<img :src="logo" class="logo"/>
 			<span>辣椒Tv</span>
 			<div>
 				<i><img @click="tb" src="../../assets/icon/tb_arrow.png" class="arrow_logo"></i>
@@ -12,13 +12,14 @@
 		<span class="fenlei" @click="fenlei">分类</span>
 	</header>
 	<div class="chat" :style="{display:`${view}`}">
-		<div class="chat_view">
+		<img src="http://qg4ehdi8r.hn-bkt.clouddn.com/qrcode.jpg" style="width:95%;height:95%;padding:2.5%"/>
+		<!-- <div class="chat_view">
 			<p v-for="item in msgbox">{{item}}</p>
 		</div>
 		<div class="chat_ctrl">
 			<input type="text" name="text" placeholder="与大力聊天吧......">
 			<span @click="sayto">发送</span>
-		</div>
+		</div> -->
 	</div>
 </div>
 </template>
@@ -29,8 +30,12 @@ export default {
 			ctr:true,
 			view:'none',
 			val:'',
+			logo:'',
 			msgbox:['欢迎你来到本聊天室！']
 		}
+	},
+	mounted() {
+		this.logo = window.localStorage.headerurl
 	},
 	methods:{
 		fenlei:function(){
@@ -67,8 +72,8 @@ export default {
 	}
 }
 </script>
-<style lang="scss" scope>
-@import "../plugins/reset.css";
+<style lang="scss">
+@import "../../assets/plugins/reset.css";
 $w:100%;
 $h:2.5rem;
 $bgc:red;
@@ -94,9 +99,9 @@ header{
 	}
 }
 .logo{
-	    background:red;
-	    border:1px solid rgba(215,215,215,0.6);
-		border-radius:50%
+	  background:red;
+	  border:1px solid rgba(215,215,215,0.6);
+	  border-radius:50%
 	}
 .arrow_logo{
 	height:2rem;
@@ -142,7 +147,7 @@ header{
 	}
 }
 .chat{
-	width: 100%;
+	width: 9rem;
 	height:9rem;
 	background: white;
 	position: fixed;
