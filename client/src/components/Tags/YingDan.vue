@@ -1,16 +1,16 @@
 <template>
 <div class="yingdan">
-	<div v-for="list in yingdan">
-	<div class="yingtou" :style="{backgroundImage:`url(${list.yinTou})`}">
-		<span class="yingtoutit">{{list.yinHeader.title}}</span>
-		<span class="yingtousubtit">{{list.yinHeader.subtit}}</span>
-		<span class="yingtoucount">共{{list.yinHeader.count}}部影片</span>
-		<span class="yingtoudate">{{list.yinHeader.date}}更新</span>
+	<div>
+	<div class="yingtou" :style="{backgroundImage:`url(${yingdan.yinTou})`}">
+		<span class="yingtoutit">{{yingdan.yinHeader.title}}</span>
+		<span class="yingtousubtit">{{yingdan.yinHeader.subtit}}</span>
+		<span class="yingtoucount">共{{yingdan.yinHeader.count}}部影片</span>
+		<span class="yingtoudate">{{yingdan.yinHeader.date}}更新</span>
 	</div>
 	<div class="content">
 		<ul>
-			<li v-for="itme in list.yincontent" :style="{backgroundImage:`url(${itme.pic})`}" @click="Toshow(itme)">
-				<span>{{itme.name}}</span>
+			<li v-for="(itme, index) in yingdan.yincontent" :key="index" :style="{backgroundImage:`url(${itme.coverurl})`}" @click="Toshow(itme)">
+				<span>{{itme.filmname}}</span>
 			</li>
 		</ul>
 	</div>

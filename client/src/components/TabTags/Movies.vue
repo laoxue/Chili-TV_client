@@ -3,7 +3,7 @@
 		<SlideShow :swiper-image="slideshowImage"></SlideShow>
 		<MovieBox :news="news"></MovieBox>
 		<Activity :act="act"></Activity>
-		<YingDan :yingdan="yingdan"></YingDan>
+		<YingDan v-for="(item, index) in yingdan" :yingdan="item" :key="index"></YingDan>
 		<div class="h_r"></div>
 	</div>
 </template>
@@ -25,9 +25,6 @@ export default{
 		act(){
 			return this.$store.state.mv.act
 		},
-		yingdan(){
-			return this.$store.state.mv.yingdan
-		}
 	},
 	components:{
 		SlideShow,
@@ -38,23 +35,35 @@ export default{
 	mounted() {
 		this.getbanner()
 		this.getnewfilm()
+		let numu = ['动画','剧情','爱情']
+		numu.map((item) => [
+			this.getyingdan(item)
+		])
 	},
 	data() {
 		return {
 			slideshowImage:[],
-			news:[]
+			news:[],
+			yingdan:[]
 		}
 	},
 	methods: {
+		getyingdan(type){
+			FilmService.getFilmList(type).then((res) => {
+				this.yingdan.push(res.data)
+				console.log(res)
+			})
+			// return this.$store.state.mv.yingdan
+		},
 		getbanner(){
 			ArticeService.getBanner().then((res) => {
-				console.log(res)
+				// console.log(res)
 				this.slideshowImage = res.data.data
 			})
 		},
 		getnewfilm(){
 			FilmService.getFilmnews().then((res) => {
-				console.log(res)
+				// console.log(res)
 				this.news = res.data.data
 			})
 		}

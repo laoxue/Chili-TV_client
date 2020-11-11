@@ -133,6 +133,7 @@ exports.plugin = {
                 "dbscore": iterator.评分,
                 "coverurl": iterator.封面地址,
                 "typelabel": iterator.类型,
+                "desc":iterator.简介,
                 "user_id": decoded.id,
                 "user_name": decoded.username,
                 "filmlist_id": iterator.属于系列 ? iterator.属于系列 : ''
@@ -186,6 +187,43 @@ exports.plugin = {
                     }
                 })
             }
+        }
+    ]),
+    // 获取电影影单
+    server.route([
+        // 豆瓣查询影片
+        {
+            method: 'GET',
+            path: '/getfilmlist',
+            handler: async (request, h) => {
+                console.log('调用影单')
+                const decoded = jwt.verify(
+                    request.headers.authorization,
+                    process.env.SECRET_KEY
+                )
+                let reg = new RegExp(request.query.type);
+                // 如果有id 则请求单条 如果没有则请求全部影片
+                return Film.find({typelabel:{$regex: reg}}).sort({_id:-1}).limit(6)
+                .then(article => {
+                    if (article) {
+                        return {
+                            yinTou:['http://aladjs.cn/%E5%8A%A8%E6%BC%AB.jpg'],
+                            yinHeader:{
+                            title:"动漫天堂，唤醒儿时回忆！",
+                            subtit:"影视盘点top1",
+                            count:article.length,
+                            date:"05-31"
+                            },
+                            yincontent:article
+                        }
+                    } else {
+                        return {
+                            code:-1,
+                            msg:"找不到相关文章!"
+                        }
+                    }
+                })
+              }
         }
     ]),
     // 豆瓣查询影片

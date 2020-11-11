@@ -5,7 +5,7 @@ import axios from 'axios'
 */
 export const login = (data) => {
     return new Promise((resolve, reject) => {
-      axios.post('http://172.18.34.17:3000/v1/chili/login', data).then(
+      axios.post('http://172.17.123.154:3000/v1/chili/login', data).then(
           (data) => {
             resolve(data)
           }
@@ -21,7 +21,7 @@ export const login = (data) => {
 */
 export const design = (data) => {
     return new Promise((resolve, reject) => {
-      axios.post('http://172.18.34.17:3000/v1/chili/register', data).then(
+      axios.post('http://172.17.123.154:3000/v1/chili/register', data).then(
           (data) => {
             resolve(data)
           }
@@ -35,7 +35,7 @@ export const design = (data) => {
   // 获取用户信息
   export const getinfo = () => {
     return new Promise((resolve, reject) => {
-      axios.get('http://172.18.34.17:3000/v1/chili/userinfo', {params:{},headers:{
+      axios.get('http://172.17.123.154:3000/v1/chili/userinfo', {params:{},headers:{
         'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
         'Authorization': window.localStorage.token
       }}).then(
@@ -52,7 +52,7 @@ export const design = (data) => {
   // 更新
   export const updateinfo = (data) => {
     return new Promise((resolve, reject) => {
-      axios.post('http://172.18.34.17:3000/v1/chili/updateinfo', data, {headers:{
+      axios.post('http://172.17.123.154:3000/v1/chili/updateinfo', data, {headers:{
         'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
         'Authorization': window.localStorage.token
       }}).then(
@@ -69,7 +69,7 @@ export const design = (data) => {
     // 上传图片
     export const uploadimage = (data) => {
       return new Promise((resolve, reject) => {
-        axios.post('http://172.18.34.17:3000/v1/chili/uploadheader', data, {headers:{
+        axios.post('http://172.17.123.154:3000/v1/chili/uploadheader', data, {headers:{
           'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
           'Content-type': 'multipart/form-data;',
           'Authorization': window.localStorage.token
