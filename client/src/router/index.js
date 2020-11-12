@@ -7,7 +7,7 @@ import Community from '@/components/NavBar/Community'
 import FilmList from '@/components/NavBar/Filmlist'
 import Home from '@/components/NavBar/Home'
 import Movies from '@/components/TabTags/Movies'
-import Katong from '@/components/TabTags/Katong'
+// import Katong from '@/components/TabTags/Katong'
 import DianShiJu from '@/components/TabTags/DianShiJu'
 import FenLei from '@/components/Tags/FenLei'
 import Show from '@/components/Tags/Show'
@@ -83,11 +83,11 @@ const vueRouter =  new Router({
               name:'movies',
               component: Movies
             },
-            {
-              path:'/katong',
-              name:'katong',
-              component: Katong
-            },
+            // {
+            //   path:'/katong',
+            //   name:'katong',
+            //   component: Katong
+            // },
             {
               path:'/dianshiju',
               name:'dianshiju',
