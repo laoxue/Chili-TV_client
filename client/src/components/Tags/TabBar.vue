@@ -57,7 +57,7 @@ export default {
 	width: 100%;
 	height: 3rem;
 	/*background: red;*/
-	position: fixed;
+	/* position: fixed; */
 	bottom: 0;
 	margin:0;
 	padding: 0;

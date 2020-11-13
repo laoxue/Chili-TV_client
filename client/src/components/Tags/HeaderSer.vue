@@ -140,7 +140,6 @@ export default {
 }
 .input_box{
   -webkit-appearance: none;
-    border: 0;
     background: rgb(241 241 241);
     color: rgb(0 0 0);
     width: 100%;
@@ -155,6 +154,8 @@ export default {
     -ms-flex-align: center;
     align-items: center;
     box-sizing: border-box !important;
+    outline: none;
+    border: none;
 }
 .add-icon{
    display: inline-block;

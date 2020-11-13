@@ -16,14 +16,14 @@
                         <label for="" class="fm-label">
                             <span><label>登录名</label></span>
                         </label>
-                        <div class="input-plain-wrap input-wrap-loginid "><input name="fm-login-id" type="text" class="fm-text" id="fm-login-id" tabindex="0" aria-label="手机号/邮箱/会员名" placeholder="手机号/邮箱/会员名" autocapitalize="off" v-model="username"></div>
+                        <div class="input-plain-wrap input-wrap-loginid "><input name="fm-login-id" type="text" class="fm-text" id="fm-login-id" style="outline: none;" tabindex="0" aria-label="手机号/邮箱/会员名" placeholder="手机号/邮箱/会员名" autocapitalize="off" v-model="username"></div>
                         <input type="text" tabindex="1" style="width: 0px; height: 0px; overflow: hidden; display: inline-block; border: 0px; position: absolute; left: -999999px;">
                     </div>
                     <div class="fm-field">
                         <label for="" class="fm-label">
                             <span><label>密码</label></span>
                         </label>
-                        <div class="input-plain-wrap input-wrap-loginid "><input name="fm-login-id" type="text" class="fm-text" id="fm-login-id" tabindex="1" aria-label="请输入登录密码" placeholder="请输入登录密码" autocapitalize="off" v-model="password"></div>
+                        <div class="input-plain-wrap input-wrap-loginid "><input name="fm-login-id" type="text" class="fm-text" id="fm-login-id" style="outline: none;" tabindex="1" aria-label="请输入登录密码" placeholder="请输入登录密码" autocapitalize="off" v-model="password"></div>
                         <input type="text" tabindex="1" style="width: 0px; height: 0px; overflow: hidden; display: inline-block; border: 0px; position: absolute; left: -999999px;">
                         <!-- <div class="password-look-btn"><i class="iconfont  icon-eye-close"></i></div> -->
                     </div>

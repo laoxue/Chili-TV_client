@@ -9,13 +9,13 @@
                 </nav>
             </div>
             <section class="list-info-page"><div class="nickname item-info-page arrow-card showPop"><span>昵称</span>
-            <input type="text" v-model="username"/></div></section>
+            <input class="default_input" type="text" v-model="username"/></div></section>
             <section class="list-info-page" v-if="!isEdit"><div class="nickname item-info-page arrow-card showPop"><span>密码</span>
-            <input type="password" v-model="password"/></div></section>
+            <input class="default_input" type="password" v-model="password"/></div></section>
             <section class="list-info-page"><div class="nickname item-info-page arrow-card showPop"><span>性别</span>
-            <input type="text" v-model="sex"/></div></section>
+            <input class="default_input" type="text" v-model="sex"/></div></section>
             <section class="list-info-page"><div class="nickname item-info-page arrow-card showPop"><span>简介</span>
-            <input type="text" v-model="remark"/></div></section>
+            <input class="default_input" type="text" v-model="remark"/></div></section>
             
             <a id="save" v-if="!isEdit" class="btn-info-page disable BtnGreenLev1" @click="design" style="text-decoration: none;" title="">保存</a>
             <a id="save" v-else class="btn-info-page disable BtnGreenLev1" @click="designedit" style="text-decoration: none;" title="">保存</a>
@@ -226,5 +226,9 @@ div {
     font-size: .875rem;
     line-height: 40px;
     font-weight: 700;
+}
+.default_input{
+    outline: none;
+    border: 1px solid gray
 }
 </style>
