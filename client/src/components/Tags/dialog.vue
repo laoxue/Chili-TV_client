@@ -3,8 +3,17 @@
   <div class="dialog" @click="close">
   </div>
   <!-- 遮挡框 -->
-   <div class="searchdouban" v-show="!showmodel">
+   <!-- <div class="searchdouban" v-show="!showmodel">
      <div style="width:95%;background:white;margin-left:2.5%;height:3rem;border-radius:5px"><input type="text" v-model="searhdata" placeholder="请输入您要录入的名字快捷录入" style="width:80%;height:40%;border:1px dashed red"/><span class="searchbtns" @click="searchdouban" style="border-radius: 0 3px 7px 0;">检索</span></div>
+   </div> -->
+   <!-- 录入框 -->
+   <div class="handluru" v-show="!showmodel">
+     <p>名称:<input type="text" placeholder="请输入资源名字"/></p>
+     <p>封面颜色:</p>
+     <p><span v-for="(item, index) in colorbox" :key="index" :style="`background:${item};height:25px;width:25px;display:inline-block;margin-right:3px`" @click="choosecolor"></span></p>
+     <p>简介:<input type="text" placeholder="请输入简介"/></p>
+     <p>资源码:<textarea type="text" placeholder="请输入资源码"> </textarea></p>
+     <p><button>确定</button></p>
    </div>
    <!-- 检索框 -->
    <div class="jiansuomodel" v-show="!showmodel&&showneirong">
@@ -43,6 +52,7 @@ import * as FilmService from './../../services/films/film.service'
 export default{
 	data(){
 		return{
+      colorbox:['red','gray','blue'],
       list:'',
       showdialog: false,
       showmodel: true,
@@ -53,8 +63,18 @@ export default{
 		}
 	},
 	name:'movieBox',
-	props:["news"],
+  props:["news"],
 	methods:{
+    // 选择颜色
+    choosecolor (e) {   
+      this.clearborder(e.currentTarget.parentElement.children)
+      e.currentTarget.style.border = '2px solid red'
+    },
+    clearborder (childdom) {
+      for(let i = 0 ;i<childdom.length;i++) {
+        childdom[i].style.border = '0px solid red'
+      }
+    },
     savedbfilm(){
       let mongodata = {
         "filmname": this.jiansuodata.title,
@@ -80,7 +100,8 @@ export default{
       })
     },
     handinput(){
-      this.showmodel = false
+      this.showmodel = false  // 豆瓣电影
+
     },
     leave(){
       // document.body.style.overflow = 'hidden'
@@ -254,5 +275,14 @@ textarea::placeholder{
   width: 100%;
   display: inline-block;
   opacity: 0;
+}
+.handluru{
+  width:90%;
+  min-height:5rem;
+  background: white;
+  position: fixed;
+  top:2rem;
+  z-index: 9999;
+  left:5%
 }
 </style>
