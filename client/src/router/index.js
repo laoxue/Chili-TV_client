@@ -129,9 +129,9 @@ const vueRouter =  new Router({
   ]
 })
 vueRouter.beforeEach((to, from, next) => {
-  checkToken().then((res) => {
+  // checkToken().then((res) => {
    
-  })
-  // next()
+  // })
+  next()
 })
 export default vueRouter;
