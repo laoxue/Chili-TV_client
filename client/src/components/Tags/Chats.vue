@@ -2,7 +2,8 @@
 	<div class="chats">
 		<div class="chatstit"><span class="back" @click="goback">返回</span>恐怖片聊天室</div>
 		<div class="window">
-			<p v-for="itme in msgbox">{{itme}}</p>
+			<div v-for="(itme, index) in leftbox" style="text-align:left" :key="index"><img :src="headerurl" style="width:45px;height:45px;border-radius:50%"/><span>{{itme.username}}:{{itme.val}}</span></div>
+			<div v-for="(itme, index) in rightbox" style="text-align:right" :key="index"><div><span class="chat_box">{{itme}}</span><img :src="headerurl" style="width:45px;height:45px;border-radius:50%"/></div><span style="font-size:10px">{{username}}</span></div>
 		</div>
 		<div class="ctrl">
 			<input type="text" name="text" v-model="val">
@@ -11,35 +12,65 @@
 	</div>
 </template>
 <script>
+import { io } from 'socket.io-client';
 export default{
 	data(){
 		return{
+			username: window.localStorage.username,
+      remark: window.localStorage.remark,
+      sex: window.localStorage.sex,
+      headerurl: window.localStorage.headerurl,
 			val:'',
-			msgbox:['欢迎你来到本聊天室！']
+			leftbox:[],
+			rightbox:[],
+			socket:{}
 		}
 	},
+	created() {
+	//发送信息给服务端
+	  // const socket = io('http://localhost');
+	},
 	mounted() {
-		this.$socket.emit('login',{
-				username: 'username',
-				password: 'password'
-			});
+		const socket = io('http://172.17.123.154:3000',{ 
+			 query:{ 
+					token:window.localStorage.token
+			 } 
+		})
+		window.global.SOCKET = socket
+		// socket.emit('login','xueq')
+		// this.socket = socket
+		let that = this
+		socket.on('chat message', function(msg){
+			console.log(msg)
+			if (msg.id === window.global.SOCKET.id) {
+				that.rightbox.push(msg.val)
+			} else {
+				that.leftbox.push({username:msg.username,val:msg.val})
+			}
+    });
+		// this.$socket.emit('login',{
+		// 		username: 'username',
+		// 		password: 'password'
+		// });
 
-			//接收服务端的信息
-			this.sockets.subscribe('relogin', (data) => {
-			console.log(data)
-			})
+		// 	//接收服务端的信息
+		// 	this.sockets.subscribe('relogin', (data) => {
+		// 	console.log(data)
+		// 	})
 	},
 	methods:{
 		goback:function(){
 			this.$router.push({name:'community'})
 		},
 		chats:function(){
-			//发送信息给服务端
-			// this.sockets.on('news', (data) => {
-			// 	console.log(data)
-			// 	this.sockets.emit('something', {my:'data'})
+			window.global.SOCKET.emit('chats_val',this.val)
+			window.global.SOCKET.on('chat message', function(msg){
+			console.log(window.global.SOCKET.id)
+			// this.msgbox.push({
+			// 	use:'me',
+			// 	val:''
 			// })
-			
+    	});
 		}
 	}
 }
@@ -95,5 +126,12 @@ export default{
 .btn{
 	background: red;
 	border-radius: 0.5rem;
+}
+.chat_box{
+	padding: 2px;
+    background: rgb(4 190 2);
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 </style>

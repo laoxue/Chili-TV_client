@@ -1,0 +1,11 @@
+// 设置全局变量
+<script>
+const BASE_URL = 'http://172.17.123.154:3000'
+const SOCKET_URL = 'http://172.17.123.154'
+const SOCKET = {}
+export default {
+    BASE_URL,
+    SOCKET_URL,
+    SOCKET
+}
+</script>

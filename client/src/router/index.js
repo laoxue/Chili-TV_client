@@ -16,6 +16,7 @@ import Design from '@/components/Tags/Design'
 import Login from '@/components/Tags/Login' //登录页
 import About from '@/components/Tags/aboutMe' //关于我
 import Article from '@/components/Tags/Article' //文章页
+import { checkToken } from '@/services/login/login.service'
 Vue.use(Router)
 
 const vueRouter =  new Router({
@@ -127,5 +128,10 @@ const vueRouter =  new Router({
     }
   ]
 })
-
+vueRouter.beforeEach((to, from, next) => {
+  checkToken().then((res) => {
+   
+  })
+  // next()
+})
 export default vueRouter;

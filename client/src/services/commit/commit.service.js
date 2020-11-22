@@ -5,7 +5,7 @@ import axios from 'axios'
 */
 export const postCommit = (data) => {
     return new Promise((resolve, reject) => {
-      axios.post('http://172.17.123.154:3000/v1/chili/postcommits',data, {headers:{
+      axios.post(`${window.global.BASE_URL}/v1/chili/postcommits`,data, {headers:{
         'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
         'Authorization': window.localStorage.token
       }}).then(
