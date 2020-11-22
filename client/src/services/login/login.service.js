@@ -3,9 +3,10 @@ import axios from 'axios'
 /**
  * 登录接口
 */
+const that = this
 export const login = (data) => {
     return new Promise((resolve, reject) => {
-      axios.post('http://146.56.224.29:3000/v1/chili/login', data).then(
+      axios.post(`${window.global.BASE_URL}/v1/chili/login`, data).then(
           (data) => {
             resolve(data)
           }
@@ -21,7 +22,7 @@ export const login = (data) => {
 */
 export const design = (data) => {
     return new Promise((resolve, reject) => {
-      axios.post('http://146.56.224.29:3000/v1/chili/register', data).then(
+      axios.post(`${window.global.BASE_URL}/v1/chili/register`, data).then(
           (data) => {
             resolve(data)
           }
@@ -35,7 +36,7 @@ export const design = (data) => {
   // 获取用户信息
   export const getinfo = () => {
     return new Promise((resolve, reject) => {
-      axios.get('http://146.56.224.29:3000/v1/chili/userinfo', {params:{},headers:{
+      axios.get(`${window.global.BASE_URL}/v1/chili/userinfo`, {params:{},headers:{
         'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
         'Authorization': window.localStorage.token
       }}).then(
@@ -52,7 +53,7 @@ export const design = (data) => {
   // 更新
   export const updateinfo = (data) => {
     return new Promise((resolve, reject) => {
-      axios.post('http://146.56.224.29:3000/v1/chili/updateinfo', data, {headers:{
+      axios.post(`${window.global.BASE_URL}/v1/chili/updateinfo`, data, {headers:{
         'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
         'Authorization': window.localStorage.token
       }}).then(
@@ -69,7 +70,27 @@ export const design = (data) => {
     // 上传图片
     export const uploadimage = (data) => {
       return new Promise((resolve, reject) => {
-        axios.post('http://146.56.224.29:3000/v1/chili/uploadheader', data, {headers:{
+        axios.post(`${window.global.BASE_URL}/v1/chili/uploadheader`, data, {headers:{
+          'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
+          'Content-type': 'multipart/form-data;',
+          'Authorization': window.localStorage.token
+        }}).then(
+            (data) => {
+              resolve(data)
+            }
+            ).catch(
+              (error) => {
+                alert(error)
+                reject(error.response.data.error)
+              }
+            )
+      })
+    }
+
+     // 验证Token
+     export const checkToken = () => {
+      return new Promise((resolve, reject) => {
+        axios.get(`${window.global.BASE_URL}/v1/chili/checktoken`, {headers:{
           'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
           'Content-type': 'multipart/form-data;',
           'Authorization': window.localStorage.token

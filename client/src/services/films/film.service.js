@@ -5,7 +5,7 @@ import axios from 'axios'
 */
 export const getFilmnews = (id) => {
     return new Promise((resolve, reject) => {
-      axios.get(`http://146.56.224.29:3000/v1/chili/getfilms?id=${id ?id:''}`, {params:{},headers:{
+      axios.get(`${window.global.BASE_URL}/v1/chili/getfilms?id=${id ?id:''}`, {params:{},headers:{
         'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
         'Authorization': window.localStorage.token
       }}).then(
@@ -24,7 +24,7 @@ export const getFilmnews = (id) => {
 */
 export const uploadexcel = (data) => {
   return new Promise((resolve, reject) => {
-    axios.post('http://146.56.224.29:3000/v1/chili/uploadExcel', data, {headers:{
+    axios.post(`${window.global.BASE_URL}/v1/chili/uploadExcel`, data, {headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Content-type': 'multipart/form-data;',
       'Authorization': window.localStorage.token
@@ -44,7 +44,7 @@ export const uploadexcel = (data) => {
 */
 export const searchfilmsbyname = (data) => {
   return new Promise((resolve, reject) => {
-    axios.get('http://146.56.224.29:3000/v1/chili/searchfilm?filmname=' + data, {headers:{
+    axios.get(`${window.global.BASE_URL}/v1/chili/searchfilm?filmname=` + data, {headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(
@@ -63,7 +63,7 @@ export const searchfilmsbyname = (data) => {
 */
 export const delmanyfilms = (data) => {
   return new Promise((resolve, reject) => {
-    axios.post('http://146.56.224.29:3000/v1/chili/delfilms', data ,{headers:{
+    axios.post(`${window.global.BASE_URL}/v1/chili/delfilms`, data ,{headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(
@@ -82,7 +82,7 @@ export const delmanyfilms = (data) => {
 */
 export const getdoubanfilm = (data) => {
   return new Promise((resolve, reject) => {
-    axios.get('http://146.56.224.29:3000/v1/chili/searchfilmbydouban?filmname='+data ,{headers:{
+    axios.get(`${window.global.BASE_URL}/v1/chili/searchfilmbydouban?filmname=`+data ,{headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(
@@ -101,7 +101,7 @@ export const getdoubanfilm = (data) => {
 */
 export const savedoubanfilm = (data) => {
   return new Promise((resolve, reject) => {
-    axios.post('http://146.56.224.29:3000/v1/chili/savefilmbydouban', data ,{headers:{
+    axios.post(`${window.global.BASE_URL}/v1/chili/savefilmbydouban`, data ,{headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(
@@ -120,7 +120,7 @@ export const savedoubanfilm = (data) => {
 */
 export const searchmyuploadfilms = (data) => {
   return new Promise((resolve, reject) => {
-    axios.get('http://146.56.224.29:3000/v1/chili/getmyfilms' ,{headers:{
+    axios.get(`${window.global.BASE_URL}/v1/chili/getmyfilms` ,{headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(
@@ -140,7 +140,7 @@ export const searchmyuploadfilms = (data) => {
 */
 export const getFilmList = (data) => {
   return new Promise((resolve, reject) => {
-    axios.get('http://146.56.224.29:3000/v1/chili/getfilmlist?type='+ data ,{headers:{
+    axios.get(`${window.global.BASE_URL}/v1/chili/getfilmlist?type=`+ data ,{headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(

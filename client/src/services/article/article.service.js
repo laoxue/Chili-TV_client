@@ -5,7 +5,7 @@ import axios from 'axios'
 */
 export const getBanner = () => {
     return new Promise((resolve, reject) => {
-      axios.get('http://146.56.224.29:3000/v1/chili/getindexbanner', {params:{},headers:{
+      axios.get(`${window.global.BASE_URL}/v1/chili/getindexbanner`, {params:{},headers:{
         'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
         'Authorization': window.localStorage.token
       }}).then(
@@ -24,7 +24,7 @@ export const getBanner = () => {
 */
 export const getInfos = (data) => {
   return new Promise((resolve, reject) => {
-    axios.get('http://146.56.224.29:3000/v1/chili/getarticles?id='+data.id, {params:{},headers:{
+    axios.get(`${window.global.BASE_URL}/v1/chili/getarticles?id=`+data.id, {params:{},headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(
