@@ -1,10 +1,13 @@
 <template>
 	<div class="chats">
-		<div class="chatstit"><span class="back" @click="goback">返回</span>恐怖片聊天室<span style="color:gray;font-size:10px">(当前在线{{}}人)</span></div>
+		<div class="chatstit"><span class="back" @click="goback">返回</span>恐怖片聊天室<span style="color:gray;font-size:10px">(当前在线{{onlinenum}}人)</span></div>
 		<div class="window">
-			<div v-for="(itme, index) in chatbox" :style="`${itme.isme ? 'text-align:right' : 'text-align:left'}`" :key="index"><div>
-				<span class="chat_box">{{itme.val}}</span>
-				<img :src="headerurl" style="width:45px;height:45px;border-radius:50%"/></div><span style="font-size:10px">{{itme.username}}</span></div>
+			<ul style="margin:0;padding:0">
+				<li v-for="(itme, index) in chatbox" :style="`${itme.isme ? 'list-style:none;display:flex;flex-direction:row-reverse;margin-top:10px' : 'list-style:none;display:flex;flex-direction:row;margin-top:10px'}`" :key="index">
+					<div style="width:40px;height:40px;background:gray;margin:0 8px;border-radius:5px;"><img :src="itme.headUrl" style="width:100%;height:100%;;"/></div>	
+					<div :style="`${itme.isme ? 'line-height: 40px;font-size:12px;background:rgb(122 206 122);border-radius:4px;padding:0 5px;max-width:70%;text-align: left;overflow: auto;' : 'line-height: 40px;background:rgb(230 230 230);font-size:12px;padding:0 5px;max-width:70%;text-align: left;overflow: auto;border-radius:4px'}`">{{itme.val}}</div>
+				</li>
+			</ul>
 		</div>
 		<div class="ctrl">
 			<input type="text" name="text" v-model="val">
@@ -24,6 +27,7 @@ export default{
 			val:'',
 			chatbox:[],
 			socket:{},
+			onlinenum:0,
 			myid: window.global.SOCKET.id
 		}
 	},
@@ -41,39 +45,28 @@ export default{
 		// socket.emit('login','xueq')
 		// this.socket = socket
 		let that = this
-		socket.on('chat message', function(msg){
-			// console.log(msg)
-			// console.log(that.myid)
-				that.chatbox.push({username:msg.username,val:msg.val,isme:(msg.id === window.global.SOCKET.id)})
-				console.log(that.chatbox)
-			// if (msg.id === window.global.SOCKET.id) {
-			// 	that.rightbox.push(msg.val)
-			// } else {
+		//接收服务端推送的信息
+    socket.on("users", function(obj) {
+			that.onlinenum = obj.number
+		})
+		// socket.on("disconnect", function(obj) {
 			
-			// }
+    // })
+		socket.on('chat message', function(msg){
+			console.log(msg)
+				that.chatbox.push({username:msg.username,headUrl:msg.headUrl,val:msg.val,isme:(msg.id === window.global.SOCKET.id)})
+			  that.val = ''
     });
-		// this.$socket.emit('login',{
-		// 		username: 'username',
-		// 		password: 'password'
-		// });
-
-		// 	//接收服务端的信息
-		// 	this.sockets.subscribe('relogin', (data) => {
-		// 	console.log(data)
-		// 	})
 	},
 	methods:{
 		goback:function(){
-			this.$router.push({name:'community'})
+			// this.$router.push({name:'community'})
+			window.global.SOCKET.emit('disconnect');
 		},
 		chats:function(){
 			window.global.SOCKET.emit('chats_val',this.val)
 			window.global.SOCKET.on('chat message', function(msg){
-			console.log(window.global.SOCKET.id)
-			// this.msgbox.push({
-			// 	use:'me',
-			// 	val:''
-			// })
+		
     	});
 		}
 	}
@@ -131,11 +124,16 @@ export default{
 	background: red;
 	border-radius: 0.5rem;
 }
-.chat_box{
+.chat_box_me{
 	padding: 2px;
     background: rgb(4 190 2);
     font-size: 14px;
     border-radius: 5px;
+    margin-right: 10px;
+}
+.chat_box_other{
+	padding: 2px;
+    font-size: 14px;
     margin-right: 10px;
 }
 </style>
