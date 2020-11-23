@@ -31,7 +31,7 @@ export default{
 	  // const socket = io('http://localhost');
 	},
 	mounted() {
-		const socket = io('http://172.17.123.154:3000',{ 
+		const socket = io(`${window.global.BASE_URL}`,{ 
 			 query:{ 
 					token:window.localStorage.token
 			 } 
