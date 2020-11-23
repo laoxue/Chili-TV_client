@@ -1,9 +1,10 @@
 <template>
 	<div class="chats">
-		<div class="chatstit"><span class="back" @click="goback">返回</span>恐怖片聊天室</div>
+		<div class="chatstit"><span class="back" @click="goback">返回</span>恐怖片聊天室<span style="color:gray;font-size:10px">(当前在线{{}}人)</span></div>
 		<div class="window">
-			<div v-for="(itme, index) in leftbox" style="text-align:left" :key="index"><img :src="headerurl" style="width:45px;height:45px;border-radius:50%"/><span>{{itme.username}}:{{itme.val}}</span></div>
-			<div v-for="(itme, index) in rightbox" style="text-align:right" :key="index"><div><span class="chat_box">{{itme}}</span><img :src="headerurl" style="width:45px;height:45px;border-radius:50%"/></div><span style="font-size:10px">{{username}}</span></div>
+			<div v-for="(itme, index) in chatbox" :style="`${itme.isme ? 'text-align:right' : 'text-align:left'}`" :key="index"><div>
+				<span class="chat_box">{{itme.val}}</span>
+				<img :src="headerurl" style="width:45px;height:45px;border-radius:50%"/></div><span style="font-size:10px">{{itme.username}}</span></div>
 		</div>
 		<div class="ctrl">
 			<input type="text" name="text" v-model="val">
@@ -21,9 +22,9 @@ export default{
       sex: window.localStorage.sex,
       headerurl: window.localStorage.headerurl,
 			val:'',
-			leftbox:[],
-			rightbox:[],
-			socket:{}
+			chatbox:[],
+			socket:{},
+			myid: window.global.SOCKET.id
 		}
 	},
 	created() {
@@ -41,12 +42,15 @@ export default{
 		// this.socket = socket
 		let that = this
 		socket.on('chat message', function(msg){
-			console.log(msg)
-			if (msg.id === window.global.SOCKET.id) {
-				that.rightbox.push(msg.val)
-			} else {
-				that.leftbox.push({username:msg.username,val:msg.val})
-			}
+			// console.log(msg)
+			// console.log(that.myid)
+				that.chatbox.push({username:msg.username,val:msg.val,isme:(msg.id === window.global.SOCKET.id)})
+				console.log(that.chatbox)
+			// if (msg.id === window.global.SOCKET.id) {
+			// 	that.rightbox.push(msg.val)
+			// } else {
+			
+			// }
     });
 		// this.$socket.emit('login',{
 		// 		username: 'username',
