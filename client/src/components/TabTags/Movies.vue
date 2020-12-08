@@ -3,7 +3,7 @@
 		<SlideShow :swiper-image="slideshowImage"></SlideShow>
 		<MovieBox :news="news"></MovieBox>
 		<Activity :act="act"></Activity>
-		<YingDan v-for="(item, index) in yingdan" :yingdan="item" :key="index"></YingDan>
+		<YingDan style="border-top: 0.5rem solid rgb(241 241 241 / 80%);padding: 5px 0px;" v-for="(item, index) in yingdan" :yingdan="item" :key="index"></YingDan>
 		<div class="h_r"></div>
 	</div>
 </template>
@@ -35,10 +35,7 @@ export default{
 	mounted() {
 		this.getbanner()
 		this.getnewfilm()
-		let numu = ['动画','剧情','爱情']
-		numu.map((item) => [
-			this.getyingdan(item)
-		])
+		this.getyingdan()
 	},
 	data() {
 		return {
@@ -48,16 +45,17 @@ export default{
 		}
 	},
 	methods: {
-		getyingdan(type){
-			FilmService.getFilmList(type).then((res) => {
-				this.yingdan.push(res.data)
-				console.log(res)
+		getyingdan(){
+			FilmService.getFilmList().then((res) => {
+				this.yingdan = res.data.data
+				console.log(this.yingdan)
 			})
 			// return this.$store.state.mv.yingdan
 		},
 		getbanner(){
 			ArticeService.getBanner().then((res) => {
-				// console.log(res)
+				console.log(res)
+				console.log('1111111111')
 				this.slideshowImage = res.data.data
 			})
 		},

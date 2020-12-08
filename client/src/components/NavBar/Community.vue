@@ -2,8 +2,8 @@
   <div class="community">
     <Header></Header>
     <ChatRoom :chatroom="chatroom"></ChatRoom>
-    <div class="title">每日一片</div>
-    <Days :days="days"></Days>
+    <!-- <div class="title">每日一片</div> -->
+    <!-- <Days :days="days"></Days> -->
   </div>
 </template>
 <script>

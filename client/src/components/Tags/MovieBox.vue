@@ -1,12 +1,12 @@
 <template>
 <div class="moviebox">
 	<div class="box_header">
-		<span style="float: left;font-size: 0.9rem">新片速递</span><span class="more">查看更多</span>
+		<span style="float: left;font-size: 0.9rem">荣誉墙</span><span class="more">查看更多</span>
 	</div>
 	<v-touch class="content">
 		<ul class="items">
 			<li v-for="(list, index) in news" @click="Toshow(list)" :key="index">
-				<div :style="{backgroundImage:`url(${list.coverurl})`}"><img src="../../assets/icon/label.png"/><span>{{list.dbscore}}</span></div>
+				<div :style="{backgroundImage:`url(${list.coverurl})`}"><img src="../../assets/icon/label.png"/><span>{{最多下载量}}</span></div>
 				<span>{{list.fulname}}</span>
 			</li>
 		</ul>
@@ -76,9 +76,10 @@ export default{
 	margin-left: 0.2rem;
 }
 .content .items li div{
-	width: 90%;
-	margin-left: 5%;
-	height: 90%;
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 10%;
+	height: 80%;
 	/*background: yellow;*/
 	background-size: 100% 100%;
 	background-repeat: no-repeat;

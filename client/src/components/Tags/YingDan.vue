@@ -1,14 +1,14 @@
 <template>
 <div class="yingdan">
 	<div>
-	<div class="yingtou" :style="{backgroundImage:`url(${yingdan.yinTou})`}">
-		<span class="yingtoutit">{{yingdan.yinHeader.title}}</span>
-		<span class="yingtousubtit">{{yingdan.yinHeader.subtit}}</span>
-		<span class="yingtoucount">共{{yingdan.yinHeader.count}}部影片</span>
-		<span class="yingtoudate">{{yingdan.yinHeader.date}}更新</span>
+	<div class="yingtou" :style="{backgroundImage:`url(${yingdan.yintou})`}">
+		<span class="yingtoutit">{{yingdan.yingheader.title}}</span>
+		<span class="yingtousubtit">{{yingdan.yingheader.subtit}}</span>
+		<span class="yingtoucount">共{{yingdan.yingheader.count}}个资源</span>
+		<span class="yingtoudate">{{yingdan.yingheader.date}}更新</span>
 	</div>
 	<div class="content">
-		<ul>
+		<ul :style="`width:${(yingdan.yincontent.length * 2 + 4)*10}%`">
 			<li v-for="(itme, index) in yingdan.yincontent" :key="index" :style="{backgroundImage:`url(${itme.coverurl})`}" @click="Toshow(itme)">
 				<span>{{itme.filmname}}</span>
 			</li>
@@ -24,7 +24,7 @@ export default{
 	methods:{
 		Toshow:function(list){
 			console.log(list)
-			this.$router.push({name:'show',params: {toppic:list.pic,name:list.name,num:list.num}});
+		    this.$router.push({path:`/show/${list._id}`})
 		}
 	}
 }
@@ -42,8 +42,8 @@ export default{
 	position: relative;
 	text-align: center;
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAgY0lzyLZ8zTwnjPDk8037d0_IjH9Nq8n4FGvJ2cGxpv4Gwmh);
+	background-size: 100%;
+	background-position:center;
 }
 .yingtou::before{
 	content: '';

@@ -140,7 +140,7 @@ export const searchmyuploadfilms = (data) => {
 */
 export const getFilmList = (data) => {
   return new Promise((resolve, reject) => {
-    axios.get(`${window.global.BASE_URL}/v1/chili/getfilmlist?type=`+ data ,{headers:{
+    axios.get(`${window.global.BASE_URL}/v1/chili/getfilmlist` ,{headers:{
       'Accept': 'text/javascript, application/javascript, application/ x-javascript, */*',
       'Authorization': window.localStorage.token
     }}).then(
