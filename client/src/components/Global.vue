@@ -1,7 +1,10 @@
-git// 设置全局变量
 <script>
+// 设置全局变量
+// 本地ip
 const BASE_URL = 'http://172.17.123.154:3000'
 const SOCKET_URL = 'http://172.17.123.154'
+
+// 服务器ip地址
 // const BASE_URL = 'http://146.56.224.29:3000'
 // const SOCKET_URL = 'http://146.56.224.29'
 

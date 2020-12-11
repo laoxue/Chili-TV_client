@@ -12,7 +12,13 @@
 		<span class="fenlei" @click="fenlei">分类</span>
 	</header>
 	<div class="chat" :style="{display:`${view}`}">
-		<img :src="loginUrl" style="width:95%;height:95%;padding:2.5%"/>
+		<p>我的成就</p>
+		<!-- <ul>
+			<li>
+				<img src="https://img.icons8.com/fluent/2x/city.png"/>
+			</li>
+		</ul> -->
+		<!-- <img :src="loginUrl" style="width:95%;height:95%;padding:2.5%"/> -->
 		<!-- <div class="chat_view">
 			<p v-for="item in msgbox">{{item}}</p>
 		</div>
@@ -109,7 +115,7 @@ header{
 	}
 }
 .logo{
-	  background:red;
+	//   background:red;
 	  border:1px solid rgba(215,215,215,0.6);
 	  border-radius:50%
 	}
@@ -157,12 +163,18 @@ header{
 	}
 }
 .chat{
-	width: 9rem;
+	width: 100%;
 	height:9rem;
 	background: white;
 	position: fixed;
 	top:$h;
 	z-index: 88;
+	p{
+		font-size: 0.7rem;
+		text-align:left;
+		padding-left: 1rem;
+	}
+	// border-bottom: 1px solid rgb(239 239 239);
 	/*display: none;*/
 }
 .chat_view{

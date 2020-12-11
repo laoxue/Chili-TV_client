@@ -1,6 +1,15 @@
 <template>
 	<div class="movies">
-		<SlideShow :swiper-image="slideshowImage"></SlideShow>
+		<!-- slide 兼容处理 -->
+		<template v-if="slideshowImage.length > 0">
+			<SlideShow :swiper-image="slideshowImage"></SlideShow>
+		</template>
+		<template v-else>
+			<div class="empty_banner">
+				<img src="http://aladjs.cn/empty_banner.png"/>
+			</div>
+		</template>
+		
 		<MovieBox :news="news"></MovieBox>
 		<Activity :act="act"></Activity>
 		<YingDan style="border-top: 0.5rem solid rgb(241 241 241 / 80%);padding: 5px 0px;" v-for="(item, index) in yingdan" :yingdan="item" :key="index"></YingDan>
@@ -54,9 +63,9 @@ export default{
 		},
 		getbanner(){
 			ArticeService.getBanner().then((res) => {
-				console.log(res)
-				console.log('1111111111')
+				console.log('这里面是banner图')
 				this.slideshowImage = res.data.data
+				console.log(this.slideshowImage)
 			})
 		},
 		getnewfilm(){
@@ -76,5 +85,17 @@ export default{
 .h_r{
 	width:100%;
 	height:1.2rem;
+}
+.empty_banner{
+	position: relative;
+    height: 9rem;
+    width: 95%;
+    margin-left: 2.5%;
+    border-radius: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.empty_banner img{
+	width: 100%;
+	height:100%;
 }
 </style>
