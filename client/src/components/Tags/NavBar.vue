@@ -26,7 +26,7 @@ export default{
 					this.$router.push({name:'movies'});
 					break;
 				case 1:
-					this.$router.push({name:'katong'})
+					this.$router.push({name:'starinfo'})
 					break;
 				case 2:
 					this.$router.push({name:'dianshiju'})

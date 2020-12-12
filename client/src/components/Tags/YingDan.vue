@@ -2,6 +2,7 @@
 <div class="yingdan">
 	<div>
 	<div class="yingtou" :style="{backgroundImage:`url(${yingdan.yintou})`}">
+		<div class="yt_model"></div>
 		<span class="yingtoutit">{{yingdan.yingheader.title}}</span>
 		<span class="yingtousubtit">{{yingdan.yingheader.subtit}}</span>
 		<span class="yingtoucount">共{{yingdan.yingheader.count}}个资源</span>
@@ -32,15 +33,16 @@ export default{
 <style lang="scss" scoped>
 .yingdan{
 	width: 100%;
-	height: 18rem;
+	height: 16.5rem;
 	/*background: black;*/
 }
 .yingtou{
-	width: 100%;
-	height: 9rem;
+	width: 97%;
+	height: 7.5rem;
 	background: black;
 	position: relative;
 	text-align: center;
+	margin-left:1.5%;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-position:center;
@@ -131,5 +133,11 @@ export default{
 	font-size: 0.5rem;
 	position: relative;
 	top:7.2rem;
+}
+.yt_model{
+	width: 100%;
+	height:100%;
+	background: rgb(50, 50, 59);
+	opacity: .8;
 }
 </style>

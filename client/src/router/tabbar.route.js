@@ -7,6 +7,7 @@ import Home from '@/components/NavBar/Home'
 import Movies from '@/components/TabTags/Movies'
 import DianShiJu from '@/components/TabTags/DianShiJu'
 import FenLei from '@/components/Tags/FenLei'
+import Katong from '@/components/TabTags/KaTong'
 // 首页
 export default [{
     path: '/index',
@@ -25,11 +26,11 @@ export default [{
             name:'movies',
             component: Movies
           },
-        //   {
-        //     path:'/katong',
-        //     name:'katong',
-        //     component: Katong
-        //   },
+          {
+            path:'/starinfo',
+            name:'starinfo',
+            component: Katong
+          },
           {
             path:'/dianshiju',
             name:'dianshiju',

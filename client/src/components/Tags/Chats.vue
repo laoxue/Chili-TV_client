@@ -60,8 +60,8 @@ export default{
 	},
 	methods:{
 		goback:function(){
-			// this.$router.push({name:'community'})
-			window.global.SOCKET.emit('disconnect');
+			this.$router.push({name:'community'})
+			// window.global.SOCKET.emit('disconnect');
 		},
 		chats:function(){
 			window.global.SOCKET.emit('chats_val',this.val)

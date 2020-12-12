@@ -9,7 +9,6 @@
 				<img src="http://aladjs.cn/empty_banner.png"/>
 			</div>
 		</template>
-		
 		<MovieBox :news="news"></MovieBox>
 		<Activity :act="act"></Activity>
 		<YingDan style="border-top: 0.5rem solid rgb(241 241 241 / 80%);padding: 5px 0px;" v-for="(item, index) in yingdan" :yingdan="item" :key="index"></YingDan>
@@ -21,6 +20,7 @@ import SlideShow from './../Tags/SlideShow.vue'
 import MovieBox from '../Tags/MovieBox.vue'
 import Activity from '../Tags/Activity.vue'
 import YingDan from '../Tags/YingDan.vue'
+import userModel from '../Tags/userModel'
 import * as ArticeService from './../../services/article/article.service'
 import * as FilmService from './../../services/films/film.service'
 export default{
@@ -39,7 +39,8 @@ export default{
 		SlideShow,
 		MovieBox,
 		Activity,
-		YingDan
+		YingDan,
+		userModel
 	},
 	mounted() {
 		this.getbanner()
