@@ -5,7 +5,7 @@
             <div class="wrapper-fixed">
                 <span style="position:absolute;left:10px;top:10px" @click="backpre">返回</span>
                 <nav class="sub-header clearfix BgCLev2 BCLev1 FCLev12">
-                    <span>编辑个人资料</span>
+                    <span>{{this.$route.query.type === 'new' ? '注册账号' : '编辑个人资料'}}</span>
                 </nav>
             </div>
             <section class="list-info-page"><div class="nickname item-info-page arrow-card showPop"><span>昵称</span>
@@ -229,6 +229,7 @@ div {
 }
 .default_input{
     outline: none;
-    border: 1px solid gray
+    border:0;
+    border-bottom: 1px solid gray
 }
 </style>
