@@ -23,12 +23,12 @@
                         <label for="" class="fm-label">
                             <span><label>密码</label></span>
                         </label>
-                        <div class="input-plain-wrap input-wrap-loginid "><input name="fm-login-id" type="text" class="fm-text" id="fm-login-id" style="outline: none;" tabindex="1" aria-label="请输入登录密码" placeholder="请输入登录密码" autocapitalize="off" v-model="password"></div>
+                        <div class="input-plain-wrap input-wrap-loginid "><input name="fm-login-id" type="password" class="fm-text" id="fm-login-id" style="outline: none;" tabindex="1" aria-label="请输入登录密码" placeholder="请输入登录密码" autocapitalize="off" v-model="password"></div>
                         <input type="text" tabindex="1" style="width: 0px; height: 0px; overflow: hidden; display: inline-block; border: 0px; position: absolute; left: -999999px;">
                         <!-- <div class="password-look-btn"><i class="iconfont  icon-eye-close"></i></div> -->
                     </div>
                     <!-- 登录方式 -->
-                    <div class="login-blocks login-links"><span target="_self" class="sms-login-link">短信验证码登录</span><span class="register-link" @click="design">免费注册</span></div>
+                    <div class="login-blocks login-links" style="display: flex;padding: 0 30px;justify-content: space-between;"><span target="_self" class="sms-login-link">短信验证码登录</span><span class="register-link" @click="design">免费注册</span></div>
                     <div class="fm-btn"><button type="button" tabindex="3" class="fm-button fm-submit password-login" style="width:85%;margin-left:-0.5%" @click="login" id="TencentCaptcha"
      data-appid="2008967045"
      data-cbfn="callback">登录</button></div>
@@ -219,5 +219,14 @@ a {
     color: rgb(255 255 255);
     width: 100%;
     cursor: pointer;
+}
+.sms-login-link{
+    color: gray;
+    font-size:0.5rem;
+}
+.register-link{
+    color: gray;
+    font-size:0.7rem;
+    color:rgb(255 80 0)
 }
 </style>
