@@ -3,18 +3,18 @@
   <div class="dialog" @click="close">
   </div>
   <!-- 遮挡框 -->
-   <!-- <div class="searchdouban" v-show="!showmodel">
+   <div class="searchdouban" v-show="!showmodel">
      <div style="width:95%;background:white;margin-left:2.5%;height:3rem;border-radius:5px"><input type="text" v-model="searhdata" placeholder="请输入您要录入的名字快捷录入" style="width:80%;height:40%;border:1px dashed red"/><span class="searchbtns" @click="searchdouban" style="border-radius: 0 3px 7px 0;">检索</span></div>
-   </div> -->
+   </div>
    <!-- 录入框 -->
-   <div class="handluru" v-show="!showmodel">
+   <!-- <div class="handluru" v-show="!showmodel">
      <p>名称:<input type="text" placeholder="请输入资源名字"/></p>
      <p>封面颜色:</p>
      <p><span v-for="(item, index) in colorbox" :key="index" :style="`background:${item};height:25px;width:25px;display:inline-block;margin-right:3px`" @click="choosecolor"></span></p>
      <p>简介:<input type="text" placeholder="请输入简介"/></p>
      <p>资源码:<textarea type="text" placeholder="请输入资源码"> </textarea></p>
      <p><button>确定</button></p>
-   </div>
+   </div> -->
    <!-- 检索框 -->
    <div class="jiansuomodel" v-show="!showmodel&&showneirong">
         <div :style="`height: 10rem;

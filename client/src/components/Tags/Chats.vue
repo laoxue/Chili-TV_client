@@ -2,7 +2,7 @@
 	<div class="chats">
 		<div class="chatstit"><span class="back" @click="goback">返回</span>恐怖片聊天室<span style="color:gray;font-size:10px">(当前在线{{onlinenum}}人)</span></div>
 		<div class="window">
-			<ul style="margin:0;padding:0">
+			<ul style="margin:0;padding:0;height: 97%;overflow-y: scroll;">
 				<li v-for="(itme, index) in chatbox" :style="`${itme.isme ? 'list-style:none;display:flex;flex-direction:row-reverse;margin-top:10px' : 'list-style:none;display:flex;flex-direction:row;margin-top:10px'}`" :key="index">
 					<div style="width:40px;height:40px;background:gray;margin:0 8px;border-radius:5px;"><img :src="itme.headUrl" style="width:100%;height:100%;;"/></div>	
 					<div :style="`${itme.isme ? 'line-height: 40px;font-size:12px;background:rgb(122 206 122);border-radius:4px;padding:0 5px;max-width:70%;text-align: left;overflow: auto;' : 'line-height: 40px;background:rgb(230 230 230);font-size:12px;padding:0 5px;max-width:70%;text-align: left;overflow: auto;border-radius:4px'}`">{{itme.val}}</div>
@@ -60,8 +60,8 @@ export default{
 	},
 	methods:{
 		goback:function(){
-			// this.$router.push({name:'community'})
-			window.global.SOCKET.emit('disconnect');
+			this.$router.push({name:'community'})
+			// window.global.SOCKET.emit('disconnect');
 		},
 		chats:function(){
 			window.global.SOCKET.emit('chats_val',this.val)

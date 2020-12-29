@@ -1,50 +1,51 @@
 <template>
 	<div class="navbar">
 		<ul class="h_t">
-			<li v-bind:class='{active:index==qwerqwer}' v-for="(item,index) in tabsParam" v-on:click="addClass(index)">{{item}}</li>
+			<li :key="index" v-bind:class='{active:index === selectIndex}' v-for="(item,index) in tabsParam" v-on:click="addClass(index)">{{item}}</li>
 		</ul>
-		</div>
 	</div>
 </template>
 <script>
 export default{
 	name:'',
 	data () {
-    return {
-      tabsParam:['电影天堂','二次元世界','新剧来袭'],
-      isActive:false,
-      qwerqwer:0
-    }
-  },
-  components:{
+		return {
+		tabsParam:['她/他的资源','她/他的信息','她/他的生活'], // 头部tab
+		isActive:false, // 当前选择
+		selectIndex:0 // 下标
+		}
+	},
+	components:{
 
-  },
-  methods:{
-  	addClass:function(index){
-  		this.qwerqwer = index;
-  	    if(index==0){
-  	    	this.$router.push({name:'movies'})
-  	    }else if(index==1){
-  	    	this.$router.push({name:'katong'})
-  	    }else if(index==2){
-  	    	this.$router.push({name:'dianshiju'})
-  	    }
-  	}
-  }
+    },
+    methods:{
+		addClass:function(index){
+			this.selectIndex = index;
+			switch(index){
+				case 0:
+					this.$router.push({name:'movies'});
+					break;
+				case 1:
+					this.$router.push({name:'starinfo'})
+					break;
+				case 2:
+					this.$router.push({name:'dianshiju'})
+					break;
+			}
+        }
+	}
 }	
 </script>
 <style lang="scss" scope>
 .navbar{
 	width:100%;
 	height: 1.5rem;
-	/*background: red;*/
 	position: relative;
 	top: -1.1rem;
 }
 .h_t{
 	width: 100%;
 	height: 1.5rem;
-	/*background: balck;*/
 }
 .h_t li{
 	width: 33.3%;
@@ -80,7 +81,6 @@ export default{
 .box{
 	width:100%;
 	height: 48rem;
-	/*background: black;*/
 	position: relative;
 }
 </style>

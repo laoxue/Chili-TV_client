@@ -5,10 +5,15 @@
 	</div>
 	<div class="content" style="margin-left:0.8rem;overflow-y: scroll;
     height: 80vh;">
-		<div class="item_content" v-for="(list, index) in news" :key="index">
-			<span style="font-size:8px;text-align:center;position:absolute;z-index:99;font-weight:800;color:white;width:100%;left:0px;font-family: emoji;">{{list.filmname}}</span>
+		<div class="item_content" v-for="(list, index) in news" :key="index" @click="Toshow(list)">
+			<!-- <span style="font-size:8px;text-align:center;position:absolute;z-index:99;font-weight:800;color:white;width:100%;left:0px;font-family: emoji;">{{list.filmname}}</span> -->
 			<span v-if="showall" :data-id="list._id" class="showicon" style="position:absolute;z-index:125;bottom:25px;right:5px" @click="selected"></span>
-			  <div :style="{backgroundImage:`url(${list.coverurl})`}"><img src="./../../assets/icon/label.png"/><span>{{list.dbscore}}</span></div>
+			  <div :style="{backgroundImage:`url(${list.coverurl})`}"><img src="./../../assets/icon/label.png"/><span>{{list.dbscore}}</span>
+			  <span style="background: linear-gradient(rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 30%) 100%);
+    opacity: .7;
+    color: rgb(255 255 255);
+    margin: 0 0.8rem;bottom: 1.5rem;padding: 0.25rem 0rem;">{{list.filmname}}</span>
+			  </div>
 		</div>
 	</div>
 </div>

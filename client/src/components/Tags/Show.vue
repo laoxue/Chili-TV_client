@@ -49,6 +49,7 @@ import * as CommitService from './../../services/commit/commit.service'
 export default{
 	data(){
 		return{
+			copyValue: '',
 			mctabbar:['简介','评论','占位'],
 			nowIndex:0,
 			content:'',
@@ -103,14 +104,16 @@ export default{
 		},
 		// 复制资源去下载 打开百度云 sachema 复制内容自动打开
 		download:function(){
-			window.location.href = 'baiduyun://'
 			const btnCopy = new Clipboard('.submit');
-			this.copyValue = `https://pan.baidu.com/s/12w9D3DmEYWfdnkth_IFFkg`;
 			let that = this
 			btnCopy.on('success', function(e) {
 				console.log(that.copyValue)
-				// window.location.href = 'baiduyun://'
-				e.clearSelection(); // 清除选中内容
+				that.copyValue = e.text
+				// that.copyValue = e.text
+				// console.log(that.copyValue)
+				console.log('成功')
+				window.location.href = 'baiduyun://'
+				// e.clearSelection(); // 清除选中内容
 			});
 		}
 	}

@@ -2,8 +2,8 @@
 <div class="header">
 	<header>
 		<div class="logo_box">
-			<img :src="logo" class="logo"/>
-			<span>辣椒Tv</span>
+			<img :src="loginUrl" class="logo"/>
+			<span>{{username}}</span>
 			<div>
 				<i><img @click="tb" src="../../assets/icon/tb_arrow.png" class="arrow_logo"></i>
 			</div>
@@ -12,7 +12,13 @@
 		<span class="fenlei" @click="fenlei">分类</span>
 	</header>
 	<div class="chat" :style="{display:`${view}`}">
-		<img src="http://qg4ehdi8r.hn-bkt.clouddn.com/qrcode.jpg" style="width:95%;height:95%;padding:2.5%"/>
+		<p>我的成就</p>
+		<!-- <ul>
+			<li>
+				<img src="https://img.icons8.com/fluent/2x/city.png"/>
+			</li>
+		</ul> -->
+		<!-- <img :src="loginUrl" style="width:95%;height:95%;padding:2.5%"/> -->
 		<!-- <div class="chat_view">
 			<p v-for="item in msgbox">{{item}}</p>
 		</div>
@@ -31,11 +37,21 @@ export default {
 			view:'none',
 			val:'',
 			logo:'',
-			msgbox:['欢迎你来到本聊天室！']
+			msgbox:['欢迎你来到本聊天室！'],
+			username:'',
+			loginUrl:''
+		}
+	},
+	created() {
+		if (window.localStorage.username) {
+			this.username = window.localStorage.username
+			this.loginUrl = window.localStorage.headerurl === '' ? 'http://aladjs.cn/300.jpg' : window.localStorage.headerurl 
+		} else {
+			this.username = '游客用户'
+			this.loginUrl = 'http://aladjs.cn/unnamed.jpg'
 		}
 	},
 	mounted() {
-		this.logo = window.localStorage.headerurl
 	},
 	methods:{
 		fenlei:function(){
@@ -99,7 +115,7 @@ header{
 	}
 }
 .logo{
-	  background:red;
+	//   background:red;
 	  border:1px solid rgba(215,215,215,0.6);
 	  border-radius:50%
 	}
@@ -147,12 +163,18 @@ header{
 	}
 }
 .chat{
-	width: 9rem;
+	width: 100%;
 	height:9rem;
 	background: white;
 	position: fixed;
 	top:$h;
 	z-index: 88;
+	p{
+		font-size: 0.7rem;
+		text-align:left;
+		padding-left: 1rem;
+	}
+	// border-bottom: 1px solid rgb(239 239 239);
 	/*display: none;*/
 }
 .chat_view{

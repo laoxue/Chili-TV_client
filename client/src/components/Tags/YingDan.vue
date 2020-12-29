@@ -1,14 +1,15 @@
 <template>
 <div class="yingdan">
 	<div>
-	<div class="yingtou" :style="{backgroundImage:`url(${yingdan.yinTou})`}">
-		<span class="yingtoutit">{{yingdan.yinHeader.title}}</span>
-		<span class="yingtousubtit">{{yingdan.yinHeader.subtit}}</span>
-		<span class="yingtoucount">共{{yingdan.yinHeader.count}}部影片</span>
-		<span class="yingtoudate">{{yingdan.yinHeader.date}}更新</span>
+	<div class="yingtou" :style="{backgroundImage:`url(${yingdan.yintou})`}">
+		<div class="yt_model"></div>
+		<span class="yingtoutit">{{yingdan.yingheader.title}}</span>
+		<span class="yingtousubtit">{{yingdan.yingheader.subtit}}</span>
+		<span class="yingtoucount">共{{yingdan.yingheader.count}}个资源</span>
+		<span class="yingtoudate">{{yingdan.yingheader.date}}更新</span>
 	</div>
 	<div class="content">
-		<ul>
+		<ul :style="`width:${(yingdan.yincontent.length * 2 + 4)*10}%`">
 			<li v-for="(itme, index) in yingdan.yincontent" :key="index" :style="{backgroundImage:`url(${itme.coverurl})`}" @click="Toshow(itme)">
 				<span>{{itme.filmname}}</span>
 			</li>
@@ -24,7 +25,7 @@ export default{
 	methods:{
 		Toshow:function(list){
 			console.log(list)
-			this.$router.push({name:'show',params: {toppic:list.pic,name:list.name,num:list.num}});
+		    this.$router.push({path:`/show/${list._id}`})
 		}
 	}
 }
@@ -32,18 +33,19 @@ export default{
 <style lang="scss" scoped>
 .yingdan{
 	width: 100%;
-	height: 18rem;
+	height: 16.5rem;
 	/*background: black;*/
 }
 .yingtou{
-	width: 100%;
-	height: 9rem;
+	width: 97%;
+	height: 7.5rem;
 	background: black;
 	position: relative;
 	text-align: center;
+	margin-left:1.5%;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAgY0lzyLZ8zTwnjPDk8037d0_IjH9Nq8n4FGvJ2cGxpv4Gwmh);
+	background-position:center;
 }
 .yingtou::before{
 	content: '';
@@ -131,5 +133,11 @@ export default{
 	font-size: 0.5rem;
 	position: relative;
 	top:7.2rem;
+}
+.yt_model{
+	width: 100%;
+	height:100%;
+	background: rgb(50, 50, 59);
+	opacity: .8;
 }
 </style>

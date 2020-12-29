@@ -37,11 +37,11 @@ const Movies = {
 		act:[
 				{
 					"bgi":"http://imge.gmw.cn/site2/20160226/f04da226e54a183a3bc533.jpeg",
-					"title":"每日电影推荐"
+					"title":"随便看看"
 				},
 				{
 					"bgi":"http://ww1.sinaimg.cn/large/006hrwDrgy1fs1mezjizbj30wv0cpkdi.jpg",
-					"title":"本月推荐指南"
+					"title":"我的推荐"
 				}
 
 			],
