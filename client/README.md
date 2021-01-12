@@ -44,14 +44,12 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 
 ### 注册 & 登录 & 资源推荐
 
-<center class="half">
-    <img src="http://aladjs.cn/chili_client_design.png" height="500"/><img src="http://aladjs.cn/chili_client_login.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/index01.png" height="500" style="margin-left:50px"/>
-</center>
+<center class="half"><img src="http://aladjs.cn/chili_client_design.png" height="500"/><img src="http://aladjs.cn/chili_client_login.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/index01.png" height="500" style="margin-left:50px"/></center>
 
 ###  资源集合分享 & 资源详情 & 资源评论
 
 <center class="half">
-    <img src="http://aladjs.cn/index02.png" height="500"/><img src="http://aladjs.cn/film01.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/film02.png" height="500" style="margin-left:50px"/>
+<img src="http://aladjs.cn/index02.png" height="500"/><img src="http://aladjs.cn/film01.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/film02.png" height="500" style="margin-left:50px"/>
 </center>
 
 ### 类型检索 & 导入资源方式 & 手动录入资源
