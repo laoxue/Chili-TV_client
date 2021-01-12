@@ -1,4 +1,6 @@
-![](static-files/newbee-mall.png)
+### 唤醒百度云
+
+<div align=center><img src="http://aladjs.cn/demo.gif" height="500"/></div>
 
 ![Build Status](https://img.shields.io/badge/build-passing-green.svg)
 ![Version 1.0.0](https://img.shields.io/badge/version-2.0.0-yellow.svg)
@@ -44,7 +46,7 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 
 ### 注册 & 登录 & 资源推荐
 
-<img src="http://aladjs.cn/chili_client_design.png" height="500"/><img src="http://aladjs.cn/chili_client_login.png" height="500"/><img src="http://aladjs.cn/index01.png" height="500"/>
+<img src="http://aladjs.cn/chili_client_design.png" height="500"/><img src="http://aladjs.cn/br.png" height="500" width="50"/><img src="http://aladjs.cn/chili_client_login.png" height="500"/><img src="http://aladjs.cn/br.png" height="500" width="50"/><img src="http://aladjs.cn/index01.png" height="500"/>
 
 ###  资源集合分享 & 资源详情 & 资源评论
 
@@ -61,10 +63,6 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
     - 通过excel可 实现批量导入资源功能，便捷操作。
 
 <img src="http://aladjs.cn/excel.png"/>
-
-### 因为功能较多gif过大，目前动图只制作了唤醒百度云的示例 如下：
-
-<img src="http://aladjs.cn/demo.gif" height="500"/>
 
 # 总结
 
