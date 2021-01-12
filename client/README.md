@@ -38,10 +38,15 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 
 ## 功能页面
 
-### 商铺列表页
+### 注册 & 登录
 
+![RUNOOB 图标](http://aladjs.cn/chili_client_design.png)
 ![RUNOOB 图标](http://aladjs.cn/chili_client_login.png)
 
+### 注册 & 登录
+
+![RUNOOB 图标](http://aladjs.cn/chili_client_design.png)
+![RUNOOB 图标](http://aladjs.cn/chili_client_login.png)
 
 <!-- ### 商铺筛选页 -->
 <!-- 
