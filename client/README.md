@@ -23,8 +23,10 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 - [x] 上传更换头像 -- 完成
 - [x] 文章阅读功能 -- 完成
 - [x] 帐户信息 -- 完成
+- [x] 搜索影片资源，爬取豆瓣内容后接口化返给页面
 - [x] 资源简介，评论 -- 完成
 - [x] 单个资源详情页面 -- 完成
+- [x] excel 批量导入资源
 - [x] 自动打开百度云 -- 完成
 - [ ] 在线群组聊天 -- 待优化已关闭
 
@@ -62,9 +64,15 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 
 ### 手动录入资源 & 通过Excel模板导入
 
+    - 手动录入利用爬虫 爬取豆瓣资源 返回影片封面 简介以及名称 手动填写百度云分享链接后保存即可。
+    - 通过excel可 实现批量导入资源功能，便捷操作。
+
 ![RUNOOB 图标](http://aladjs.cn/chili_client_savebaidu.png)
 ![RUNOOB 图标](http://aladjs.cn/excel.png)
 
+### 因为功能较多gif过大，目前动图只制作了唤醒百度云的示例 如下：
+
+![RUNOOB 图标](http://aladjs.cn/demo.gif)
 
 # 总结
 
