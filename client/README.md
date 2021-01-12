@@ -8,7 +8,7 @@
 
 - [移动客户端页面 Chili-TV_client](https://github.com/laoxue/Chili-TV_client)  (基于Vue全家桶)
 - [服务端接口API Chili-TV_api](https://github.com/laoxue/Chili-TV_api) (基于Node Hapi框架 + Mongodb + Redis)
-- [移动客户端页面 Chili-TV_web](https://github.com/laoxue/Chili-TV_client) (基于React + React-router + Ant-design)
+- [PC后台管理页面 Chili-TV_web](https://github.com/laoxue/Chili-TV_client) (基于React + React-router + Ant-design)
 
 
 Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:5000)，账号可自行注册，建议使用手机模式打开(最近没时间维护可能会部分出错)。
