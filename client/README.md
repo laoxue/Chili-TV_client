@@ -23,8 +23,10 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 - [x] 上传更换头像 -- 完成
 - [x] 文章阅读功能 -- 完成
 - [x] 帐户信息 -- 完成
+- [x] 资源简介，评论 -- 完成
 - [x] 单个资源详情页面 -- 完成
 - [x] 自动打开百度云 -- 完成
+- [ ] 在线群组聊天 -- 待优化已关闭
 
 ## 开发及部署文档
 
@@ -43,14 +45,25 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 ![RUNOOB 图标](http://aladjs.cn/chili_client_design.png)
 ![RUNOOB 图标](http://aladjs.cn/chili_client_login.png)
 
-### 注册 & 登录
+### 资源推荐 & 资源集合分享
 
-![RUNOOB 图标](http://aladjs.cn/chili_client_design.png)
-![RUNOOB 图标](http://aladjs.cn/chili_client_login.png)
+![RUNOOB 图标](http://aladjs.cn/index01.png)
+![RUNOOB 图标](http://aladjs.cn/index02.png)
 
-<!-- ### 商铺筛选页 -->
-<!-- 
-<img src="https://github.com/bailicangdu/vue2-elm/blob/master/screenshots/food.png" width="365" height="619"/> <img src="https://github.com/bailicangdu/vue2-elm/blob/master/screenshots/food.gif" width="365" height="619"/> -->
+### 资源详情 & 资源评论
+
+![RUNOOB 图标](http://aladjs.cn/film01.png)
+![RUNOOB 图标](http://aladjs.cn/film02.png)
+
+### 类型检索 & 导入资源方式
+
+![RUNOOB 图标](http://aladjs.cn/type.png)
+![RUNOOB 图标](http://aladjs.cn/exporthole.png)
+
+### 手动录入资源 & 通过Excel模板导入
+
+![RUNOOB 图标](http://aladjs.cn/chili_client_savebaidu.png)
+![RUNOOB 图标](http://aladjs.cn/excel.png)
 
 
 # 总结
@@ -63,4 +76,4 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 
 ## 感谢
 
-所有项目中使用到的模块作者
+所有项目中使用到的模块开发者

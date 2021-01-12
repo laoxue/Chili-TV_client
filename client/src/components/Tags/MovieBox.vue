@@ -3,8 +3,8 @@
 	<div class="box_header">
 		<span style="float: left;font-size: 0.9rem;margin-left:0.7rem;width:25%"><i class="title_icon"></i>&nbsp;饭团速递</span><span class="more">查看更多</span>
 	</div>
-	<v-touch class="content">
-		<ul class="items">
+	<v-touch class="content" style="overflow-x:scroll">
+		<ul class="items" style="width:800%">
 			<li v-for="(list, index) in news" @click="Toshow(list)" :key="index">
 				<div :style="{backgroundImage:`url(${list.coverurl})`}">
 					<!-- <img src="../../assets/icon/label.png"/><span>{{list.dbscore}}</span> -->
