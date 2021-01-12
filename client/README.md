@@ -48,13 +48,13 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 
 ###  资源集合分享 & 资源详情 & 资源评论
 
-<img src="http://aladjs.cn/index02.png" height="500"/><img src="http://aladjs.cn/film01.png" height="500"/><img src="http://aladjs.cn/film02.png" height="500"/>
+<img src="http://aladjs.cn/index02.png" height="500"/><img src="http://aladjs.cn/br.png" height="500" width="50"/><img src="http://aladjs.cn/film01.png" height="500"/><img src="http://aladjs.cn/br.png" height="500" width="50"/><img src="http://aladjs.cn/film02.png" height="500"/>
 
 ### 类型检索 & 导入资源方式 & 手动录入资源
 
     - 手动录入利用爬虫 爬取豆瓣资源 返回影片封面 简介以及名称 手动填写百度云分享链接后保存即可。
 
-<center class="half"><img src="http://aladjs.cn/type.png" height="500><img src="http://aladjs.cn/exporthole.png" height="500"/><img src="http://aladjs.cn/chili_client_savebaidu.png" height="500"/></center>
+<img src="http://aladjs.cn/type.png" height="500"/><img src="http://aladjs.cn/br.png" height="500" width="50"/><img src="http://aladjs.cn/exporthole.png" height="500"/><img src="http://aladjs.cn/br.png" height="500" width="50"/><img src="http://aladjs.cn/chili_client_savebaidu.png" height="500"/>
 
 ### 通过Excel模板导入
 
