@@ -44,22 +44,29 @@ Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:
 
 ### 注册 & 登录 & 资源推荐
 
-<img src="http://aladjs.cn/chili_client_design.png" height="500"/><img src="http://aladjs.cn/chili_client_login.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/index01.png" height="500" style="margin-left:50px"/>
+<center class="half">
+    <img src="http://aladjs.cn/chili_client_design.png" height="500"/><img src="http://aladjs.cn/chili_client_login.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/index01.png" height="500" style="margin-left:50px"/>
+</center>
 
 ###  资源集合分享 & 资源详情 & 资源评论
 
-<img src="http://aladjs.cn/index02.png" height="500"/><img src="http://aladjs.cn/film01.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/film02.png" height="500" style="margin-left:50px"/>
+<center class="half">
+    <img src="http://aladjs.cn/index02.png" height="500"/><img src="http://aladjs.cn/film01.png" height="500" style="margin-left:50px"/><img src="http://aladjs.cn/film02.png" height="500" style="margin-left:50px"/>
+</center>
 
-### 类型检索 & 导入资源方式
-
-<img src="http://aladjs.cn/type.png" height="500"/><img src="http://aladjs.cn/exporthole.png" height="500"/>
-
-### 手动录入资源 & 通过Excel模板导入
+### 类型检索 & 导入资源方式 & 手动录入资源
 
     - 手动录入利用爬虫 爬取豆瓣资源 返回影片封面 简介以及名称 手动填写百度云分享链接后保存即可。
+
+<center class="half">
+<img src="http://aladjs.cn/type.png" height="500"/><img src="http://aladjs.cn/exporthole.png" height="500"/><img src="http://aladjs.cn/chili_client_savebaidu.png" height="500"/>
+</center>
+
+### 通过Excel模板导入
+
     - 通过excel可 实现批量导入资源功能，便捷操作。
 
-<img src="http://aladjs.cn/chili_client_savebaidu.png" height="500"/><img src="http://aladjs.cn/excel.png" height="500"/>
+<img src="http://aladjs.cn/excel.png"/>
 
 ### 因为功能较多gif过大，目前动图只制作了唤醒百度云的示例 如下：
 
