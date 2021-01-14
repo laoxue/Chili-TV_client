@@ -1,7 +1,7 @@
 ### 唤醒百度云
 
 <div align=center><img src="http://aladjs.cn/demo.gif" height="500"/></div>
-
+<div height="50"></div>
 ![Build Status](https://img.shields.io/badge/build-passing-green.svg)
 ![Version 1.0.0](https://img.shields.io/badge/version-2.0.0-yellow.svg)
 [![License](https://img.shields.io/badge/license-GPL3.0-blue.svg)]()
@@ -10,10 +10,10 @@
 
 - [移动客户端页面 Chili-TV_client](https://github.com/laoxue/Chili-TV_client)  (基于Vue全家桶)
 - [服务端接口API Chili-TV_api](https://github.com/laoxue/Chili-TV_api) (基于Node Hapi框架 + Mongodb + Redis)
-- [PC后台管理页面 Chili-TV_web](https://github.com/laoxue/Chili-TV_client) (基于React + React-router + Ant-design)
+- [PC后台管理页面 Chili-TV_web](https://github.com/laoxue/Chili-TV_web) (基于React + React-router + Ant-design)
 
 
-Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://47.99.134.126:5000)，账号可自行注册，建议使用手机模式打开(最近没时间维护可能会部分出错)。
+Vue 版本线上预览地址：[http://fantuan.wooyun.icu](http://fantuan.wooyun.icu)，账号可自行注册，建议使用手机模式打开(最近没时间维护可能会部分出错)。
 
 # 目标功能
 - [x] 登录功能 -- 完成
