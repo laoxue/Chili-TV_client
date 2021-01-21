@@ -1,7 +1,7 @@
 <template>
 	<div class="topbanner" style="margin-top:7rem">
 		<!-- <h1>{{title}}</h1> -->
-		<img src="http://aladjs.cn/%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE.png" style="width:150px;height:150px;"/>
+		<img src="http://aladjs.cn/dali_saymore.png" style="width:150px;height:150px;"/>
 		<p style="color:rgb(112 118 123)">{{this.date}}</p>
 		<p style="color:rgb(112 118 123)">{{subtitle}}</p>
 		<!-- <button @click="input">点击进入主页</button> -->
