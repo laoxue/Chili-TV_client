@@ -8,7 +8,7 @@
 </template>
 <script>
 import Header from './../Tags/Header.vue';
-import NavBar from './../Tags/navBar.vue'  
+import NavBar from './../Tags/NavBar.vue'  
 // import MovieBox from './Tags/MovieBox.vue'
 // import YingDan from './Tags/YingDan.vue'
 export default {
