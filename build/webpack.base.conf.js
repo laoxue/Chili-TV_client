@@ -23,7 +23,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','.tsx','.ts'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
@@ -40,6 +40,18 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+      },
+      { // 加入对文件的ts识别
+        test: /.ts$/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
+      },
+      {
+          test: /.tsx?$/,
+          loader: 'ts-loader',
+          options: {
+            appendTsSuffixTo: [/.vue$/],
+          }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

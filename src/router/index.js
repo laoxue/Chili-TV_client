@@ -115,6 +115,7 @@ const vueRouter =  new Router({
           path: '/home',
           name:'home',
           component: Home,
+          // 导航首位 验证token
           beforeEnter: (to, from, next) => {
             if(window.localStorage.token){
               next()
@@ -128,10 +129,4 @@ const vueRouter =  new Router({
     }
   ]
 })
-// vueRouter.beforeEach((to, from, next) => {
-//   // checkToken().then((res) => {
-   
-//   // })
-//   next()
-// })
 export default vueRouter;
